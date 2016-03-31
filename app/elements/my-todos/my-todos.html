@@ -1,0 +1,16 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../todo-item/todo-item.html">
+
+<dom-module id="my-todos">
+	<template>
+		<paper-input id="newTodo" placeholder="Add your task and press enter"></paper-input>
+		<template is="dom-repeat" items="{{todos}}" as="item">			
+			<todo-item todo="{{item}}"></todo-item>
+		</template>
+		<paper-toast id="toast"></paper-toast>
+	</template>
+
+	<script src="my-todos.js"></script>
+</dom-module>

@@ -1,0 +1,11 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-localstorage/iron-localstorage.html">
+
+<dom-module id="todo-list">
+	<template>
+		<iron-localstorage name="todos-polymer" value="{{todos}}" on-iron-localstorage-load-empty="_initTodos">
+		</iron-localstorage>
+	</template>
+
+	<script src="todo-list.js"></script>
+</dom-module>
