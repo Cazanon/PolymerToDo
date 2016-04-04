@@ -5,13 +5,16 @@
 	Polymer({
 		is: 'my-todos',
 		properties: {
-			todos: {
+			items: {
 				type: Array
 			},
 			myModel: {
 				type: Object
 			},
 			modelId: {
+				type: String
+			},
+			filter: {
 				type: String
 			}
 		},
@@ -21,7 +24,9 @@
 			'newTodo.keyup'	: '_keyUpAction'
 		},
 		attached: function(){
-			this.myModel = document.querySelector('#'+this.modelId);
+			this.myModel = document.querySelector('#' + this.modelId);
+			console.log(this.filter);
+			console.log(this.tasks);
 		},
 		_keyUpAction: function(e){
 			var ENTER_KEY = 13;
@@ -40,14 +45,14 @@
 			this.myModel.newItem({label: value, done: false});
 		},
 		toggleTodo: function(e, todo){					
-			console.log(todo);
+			//console.log(todo);
 		},
 
 		deleteTodo: function(e, todo){
 			this.$.toast.text = 'Task ' + todo.label + ' removed';
 			this.$.toast.open();
 			this.myModel.deleteItem(todo);
-			console.log('Delete ',todo);
+			//console.log('Delete ',todo);
 		}
 	});
 
